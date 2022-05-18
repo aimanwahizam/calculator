@@ -16,5 +16,13 @@
         align-items: center;
     }
 
+    #id {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    #plusMinus {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
 
 }
