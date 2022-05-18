@@ -1,15 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Signika+Negative&display=swap");
 * {
   padding: 0;
   margin: 0;
-  color: red;
-}
-
-body {
-  background-color: red;
 }
 
 .display {
-  height: 40%;
-  background-color: red;
+  height: 35vh;
+  background-color: #EDF5E1;
+  font-family: "Koulen", sans-serif;
+}
+.display__bottom {
+  height: 87.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.inputs {
+  height: 62vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgba(142, 228, 175, 0.4862745098);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.inputs__button {
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */

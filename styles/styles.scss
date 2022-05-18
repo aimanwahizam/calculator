@@ -1,5 +1,3 @@
-// Import layout scss files
-@use "/layout/_layout-dir";
-
-// Import fonts, variable and mixin scss files
-@use "/abstracts/_abstract-dir";
+@use "./body";
+@use "./display";
+@use "./inputs";
