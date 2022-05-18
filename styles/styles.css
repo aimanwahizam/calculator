@@ -3,10 +3,30 @@
   margin: 0;
 }
 
+body {
+  background-color: #EDF5E1;
+}
+
 .display {
   height: 35vh;
-  background-color: #EDF5E1;
   font-family: "Koulen", sans-serif;
+}
+.display__top {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.display__options {
+  background-color: rgba(142, 228, 175, 0.4862745098);
+  border-radius: 0.5rem;
+  height: 1.5rem;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .display__bottom {
   height: 87.5%;
@@ -26,7 +46,6 @@
   border-top-right-radius: 10px;
 }
 .inputs__button {
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
