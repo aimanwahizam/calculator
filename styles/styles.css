@@ -1,1 +1,15 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Signika+Negative&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  color: red;
+}
+
+body {
+  background-color: red;
+}
+
+.display {
+  height: 40%;
+  background-color: red;
+}/*# sourceMappingURL=styles.css.map */
