@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Signika+Negative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Signika+Negative&display=swap");
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
-  background-color: #EDF5E1;
+  background-color: white;
 }
 
 .display {
@@ -19,7 +21,7 @@ body {
   justify-content: center;
 }
 .display__options {
-  background-color: rgba(142, 228, 175, 0.4862745098);
+  background-color: #F9F9F9;
   border-radius: 0.5rem;
   height: 1.5rem;
   width: 15%;
@@ -42,20 +44,27 @@ body {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  background-color: rgba(142, 228, 175, 0.4862745098);
+  background-color: #F9F9F9;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-family: "Signika Negative", sans-serif;
 }
 .inputs__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #05386B;
+  color: #282C36;
 }
-.inputs__container--color-one {
-  color: #379683;
+.inputs__button {
+  background-color: #F7F7F7;
+  border-style: none;
+  font-family: "Signika Negative", sans-serif;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
 }
-.inputs__container--color-two {
-  color: #5CDB95;
+.inputs__button--color-one {
+  color: #EB6565;
+}
+.inputs__button--color-two {
+  color: #60F9DD;
 }/*# sourceMappingURL=styles.css.map */

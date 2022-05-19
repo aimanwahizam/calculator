@@ -9,13 +9,23 @@
     background-color: $color-input-background;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    font-family: $font-secondary;
+
 
     &__container {
         display: flex;
         justify-content: center;
         align-items: center;
         color: $color-primary;
+    }
+
+    &__button{
+        background-color: $color-input-button;
+        border-style: none;    
+        font-family: $font-secondary;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+
 
         &--color-one {
             color: $color-secondary;

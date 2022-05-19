@@ -1,11 +1,14 @@
-// Fonts variables
+@use "./fonts";
+
+// Font variables
 $font-primary: "Koulen", sans-serif;
 $font-secondary: "Signika Negative", sans-serif;
 
 // Color variables
-$color-background: #EDF5E1;
-$color-primary: #05386B;
-$color-secondary: #379683;
-$color-third: #5CDB95;
-$color-input-background: #8ee4af7c;
+$color-background: white;
+$color-primary: #282C36;
+$color-secondary: #EB6565;
+$color-third: #60F9DD;
+$color-input-background: #F9F9F9;
+$color-input-button: #F7F7F7;
 
