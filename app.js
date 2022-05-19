@@ -4,12 +4,13 @@
 const calculatorButton = document.querySelectorAll(".inputs__label");
 
 console.log(calculatorButton);
+console.log(calculatorButton[8].value);
 
 // Functions
 // Try to console.log the id of the button
 
-const onClickCalculatorButton = () => {
-  console.log(calculatorButton.value);
+const onClickCalculatorButton = (event) => {
+  console.log(event.target.value);
 };
 
 // Event listeners
