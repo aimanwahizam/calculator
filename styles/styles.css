@@ -34,6 +34,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  font-family: "Koulen", sans-serif;
 }
 
 .inputs {
@@ -44,15 +45,17 @@ body {
   background-color: rgba(142, 228, 175, 0.4862745098);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-family: "Signika Negative", sans-serif;
 }
 .inputs__button {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #05386B;
 }
-.inputs #id {
-  grid-area: 1/1/2/2;
+.inputs__button--color-one {
+  color: #379683;
 }
-.inputs #plusMinus {
-  grid-area: 1/2/2/3;
+.inputs__button--color-two {
+  color: #5CDB95;
 }/*# sourceMappingURL=styles.css.map */

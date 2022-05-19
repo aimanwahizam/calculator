@@ -9,20 +9,21 @@
     background-color: $color-input-background;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    font-family: $font-secondary;
 
     &__button {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        color: $color-primary;
 
-    #id {
-        grid-area: 1 / 1 / 2 / 2;
-    }
+        &--color-one {
+            color: $color-secondary;
+        }
 
-    #plusMinus {
-        grid-area: 1 / 2 / 2 / 3;
+        &--color-two {
+            color: $color-third;
+        }
     }
-
 
 }
