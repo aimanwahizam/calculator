@@ -47,15 +47,15 @@ body {
   border-top-right-radius: 10px;
   font-family: "Signika Negative", sans-serif;
 }
-.inputs__button {
+.inputs__container {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #05386B;
 }
-.inputs__button--color-one {
+.inputs__container--color-one {
   color: #379683;
 }
-.inputs__button--color-two {
+.inputs__container--color-two {
   color: #5CDB95;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,7 @@
 // HTML elements
 //Try with one id first
 // const calculatorButton = document.querySelectorAll(".inputs__button")
-const calculatorButton = document.querySelectorAll(".inputs__label");
+const calculatorButton = document.querySelectorAll(".inputs__button");
 
 console.log(calculatorButton);
 console.log(calculatorButton[8].value);
