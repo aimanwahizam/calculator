@@ -1,19 +1,17 @@
-// HTML elements
-//Try with one id first
-// const calculatorButton = document.querySelectorAll(".inputs__button")
+// HTML elements---------------------------------------------------------------------------
 const calculatorButton = document.querySelectorAll(".inputs__button");
+const currentDisplay = document.querySelector(".display__current")
 
-console.log(calculatorButton);
-console.log(calculatorButton[8].value);
+// Empty array to store display
+const display = [];
 
-// Functions
-// Try to console.log the id of the button
-
+// Functions --------------------------------------------------------------------------------
 const onClickCalculatorButton = (event) => {
-  console.log(event.target.value);
+  display.push(event.target.value);
+  currentDisplay.innerText += event.target.value;
 };
 
-// Event listeners
+// Event listeners------------------------------------------------------------------------------
 calculatorButton.forEach((button) =>
   button.addEventListener("click", onClickCalculatorButton)
 );

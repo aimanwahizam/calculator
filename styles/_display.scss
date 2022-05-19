@@ -3,7 +3,6 @@
 // Mobile
 .display {
     height: 35vh;
-    font-family: $font-primary;
 
     &__top {
         margin-top: 1rem;
@@ -31,5 +30,10 @@
         justify-content: flex-end;
         align-items: flex-end;
         font-family: $font-primary;
+        font-size: $font-large;
+    }
+
+    &__memory {
+        font-size: $font-medium;
     }
 }

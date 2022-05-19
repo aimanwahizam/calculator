@@ -21,12 +21,12 @@
     &__button{
         background-color: $color-input-button;
         border-style: none;    
-        font-family: $font-secondary;
+        font-family: $font-secondary; 
+        font-size: $font-medium;
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 0.75rem;
-
-
+    
         &--color-one {
             color: $color-secondary;
         }
