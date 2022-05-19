@@ -29,11 +29,16 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+        margin-right: 0.75rem;
         font-family: $font-primary;
         font-size: $font-large;
     }
 
     &__memory {
         font-size: $font-medium;
+    }
+
+    &__color {
+        color: $color-third;
     }
 }

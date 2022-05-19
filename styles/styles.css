@@ -35,11 +35,15 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-right: 0.75rem;
   font-family: "Koulen", sans-serif;
   font-size: 2.5rem;
 }
 .display__memory {
   font-size: 1.5rem;
+}
+.display__color {
+  color: #60F9DD;
 }
 
 .inputs {
@@ -67,8 +71,8 @@ body {
   border-radius: 0.75rem;
 }
 .inputs__button--color-one {
-  color: #EB6565;
+  color: #60F9DD;
 }
 .inputs__button--color-two {
-  color: #60F9DD;
+  color: #EB6565;
 }/*# sourceMappingURL=styles.css.map */
