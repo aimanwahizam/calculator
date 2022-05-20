@@ -42,8 +42,14 @@ body {
 .display__memory {
   font-size: 1.5rem;
 }
+.display__current {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
 .display__color {
-  color: #60F9DD;
+  color: #EB6565;
 }
 
 .inputs {

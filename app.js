@@ -8,16 +8,19 @@ const symbols = ["/", "x", "-", "+"];
 
 // Functions --------------------------------------------------------------------------------
 const onClickCalculatorButton = (event) => {
-  display.push(event.target.value);
-  console.log(display);
 
-  display.forEach((character) => {
-    if (symbols.includes(character)) {
-      currentDisplay.innerHTML = `<p class="diplay__color">${character}</p>`;
-    } else {
-      currentDisplay.innerHTML = `<p>${character}</p>`;
-    }
-  });
+  // Loop to make sure symbols are a different colorf
+  if (symbols.includes(event.target.value)) {
+    display.push(`<p class="display__color">${event.target.value}</p>`);
+  } else {
+    display.push(`<p>${event.target.value}</p>`);
+  }
+
+  // Join the display 
+  let temporaryDisplay = display.join("");
+
+  // Shows current inputs onto display
+  currentDisplay.innerHTML = `${temporaryDisplay}`
 };
 
 // Event listeners------------------------------------------------------------------------------
