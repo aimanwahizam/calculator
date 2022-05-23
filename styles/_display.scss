@@ -35,7 +35,11 @@
     }
 
     &__memory {
-        font-size: $font-medium;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: $font-small;
     }
 
     &__current {
