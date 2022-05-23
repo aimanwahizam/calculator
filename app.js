@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/*                                Useful Arrays                               */
+/* -------------------------------------------------------------------------- */
+
 const symbols = ["÷", "x", "-", "+"];
 let display = [];
 
@@ -17,7 +21,6 @@ const equalsButton = document.querySelector("#equals");
 
 // Prints to display the button pushed
 const onClickCalculatorButton = (event) => {
-  
   // Loop to make sure symbols are a different color to numbers
   if (event.target.value === "=") {
   } else if (symbols.includes(event.target.value)) {
@@ -34,6 +37,7 @@ const displayClear = () => {
   currentDisplay.innerHTML = "";
   memoryDisplay.innerHTML = "";
   display = [];
+  memory = 0;
 };
 
 // Push current display to memory
@@ -49,6 +53,7 @@ const currentToMemoryDisplay = () => {
   });
 
   currentDisplay.innerHTML = "";
+  display = [];
 };
 
 /* --------------------------- // Maths functions --------------------------- */
@@ -74,19 +79,60 @@ const division = (numberOne, numberTwo) => {
 };
 
 /* ---------------------------- Overall Maths Function ---------------------------- */
+let memory = 0;
 
-// ASSUME WORKING WITH TWO NUMBERS FOR NOW
-const calculateMathsFunctions = () => {
-  const temporaryDisplay = display.join("");
-  // const operandOne = [];
-  // const operandTwo = [];
+const onEqualsPress = () => {
+  let temporaryDisplay = display.join("");
+  console.log(display);
+  
+  symbols.forEach(symbol => {
+    if (display.includes(symbol)) {
+      // Split into two parts by operator
+      const operands = temporaryDisplay.split(symbol);
+      
+      // Check to see if there's memory
+      let  operandOne = []
+      if (memory != 0) {
+        operandOne = memory;
+      } else {
+        operandOne = operands[0];
+      }
 
-  if (display.includes("÷")) {
-    const operands = temporaryDisplay.split("÷");
-    const result = division(parseInt(operands[0]), parseInt(operands[1]));
-    currentToMemoryDisplay();
-    currentDisplay.innerHTML = `<p>${result}</p>`;
-  }
+      const operandTwo = operands[1];
+
+      // Depending on symbol, carry out calculation
+      // Push current display to memory line
+      // Save memory
+      if (symbol === "÷") {
+        const result = division(parseFloat(operandOne), parseFloat(operandTwo));
+        currentToMemoryDisplay();
+        currentDisplay.innerHTML = `<p>${result}</p>`;
+        memory = result;
+        display.push(memory);
+      } else if (symbol === "x") {
+        const result = multiplication(
+          parseFloat(operandOne),
+          parseFloat(operandTwo)
+        );
+        currentToMemoryDisplay();
+        currentDisplay.innerHTML = `<p>${result}</p>`;
+        memory = result;
+        display.push(memory);
+      } else if (symbol === "-") {
+        const result = subtraction(parseFloat(operandOne), parseFloat(operandTwo));
+        currentToMemoryDisplay();
+        currentDisplay.innerHTML = `<p>${result}</p>`;
+        memory = result;
+        display.push(memory);
+      } else if (symbol === "+") {
+        const result = addition(parseFloat(operandOne), parseFloat(operandTwo));
+        currentToMemoryDisplay();
+        currentDisplay.innerHTML = `<p>${result}</p>`;
+        memory = result;
+        display.push(memory);
+      }
+    }
+  })
 };
 
 /* -------------------------------------------------------------------------- */
@@ -99,4 +145,4 @@ calculatorButton.forEach((button) =>
 
 ACButton.addEventListener("click", displayClear);
 
-equalsButton.addEventListener("click", calculateMathsFunctions);
+equalsButton.addEventListener("click", onEqualsPress);

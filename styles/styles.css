@@ -44,7 +44,7 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 .display__current {
   display: flex;
@@ -75,7 +75,7 @@ body {
   background-color: #F7F7F7;
   border-style: none;
   font-family: "Koulen", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.75rem;
