@@ -1,29 +1,34 @@
-// HTML elements---------------------------------------------------------------------------
+/* ------------------------------ HTML ELements ----------------------------- */
 const calculatorButton = document.querySelectorAll(".inputs__button");
 const currentDisplay = document.querySelector(".display__current");
+const memoryDisplay = document.querySelector(".display__memory");
+const ACButton = document.querySelector("#AC");
 
-// Empty array to store display
-const display = [];
+
 const symbols = ["/", "x", "-", "+"];
 
-// Functions --------------------------------------------------------------------------------
+/* -------------------------------- Functions ------------------------------- */
+// Prints to display the button pushed
 const onClickCalculatorButton = (event) => {
 
-  // Loop to make sure symbols are a different colorf
+  // Loop to make sure symbols are a different color to numbers
   if (symbols.includes(event.target.value)) {
-    display.push(`<p class="display__color">${event.target.value}</p>`);
+    currentDisplay.innerHTML += `<p class="display__color">${event.target.value}</p>`;
   } else {
-    display.push(`<p>${event.target.value}</p>`);
+    currentDisplay.innerHTML += `<p>${event.target.value}</p>`;
   }
-
-  // Join the display 
-  let temporaryDisplay = display.join("");
-
-  // Shows current inputs onto display
-  currentDisplay.innerHTML = `${temporaryDisplay}`
 };
 
-// Event listeners------------------------------------------------------------------------------
+// Clear display on AC Button
+const onACPush = () => {
+  currentDisplay.innerHTML = "";
+  memoryDisplay.innerHTML = "";
+}
+
+/* ----------------------------- Event Listeners ---------------------------- */
 calculatorButton.forEach((button) =>
   button.addEventListener("click", onClickCalculatorButton)
 );
+
+ACButton.addEventListener("click", onACPush);
+
