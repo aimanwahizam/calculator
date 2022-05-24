@@ -5,6 +5,10 @@
     margin: 0;
 }
 
-body {
+.body {
     background-color: $color-background;
+
+    &--dark-mode {
+        background-color: $dark-background;
+    }
 }

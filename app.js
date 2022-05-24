@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/*                                Useful Arrays                               */
+/*                                Useful Arrays and Variables                           */
 /* -------------------------------------------------------------------------- */
 
 const symbols = ["÷", "x", "-", "+"];
@@ -14,6 +14,9 @@ const ACButton = document.querySelector("#AC");
 const currentDisplay = document.querySelector(".display__current");
 const memoryDisplay = document.querySelector(".display__memory");
 const equalsButton = document.querySelector("#equals");
+const negativeButton = document.querySelector("#plus-minus");
+const darkModeButton = document.querySelector(".display__dark");
+const body = document.querySelector(".body");
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -22,6 +25,7 @@ const equalsButton = document.querySelector("#equals");
 // Prints to display the button pushed
 const onClickCalculatorButton = (event) => {
   // Loop to make sure symbols are a different color to numbers
+  // Don't push = to display
   if (event.target.value === "=") {
   } else if (symbols.includes(event.target.value)) {
     currentDisplay.innerHTML += `<p class="display__color">${event.target.value}</p>`;
@@ -40,8 +44,23 @@ const displayClear = () => {
   memory = 0;
 };
 
+// TEST - NEED FINISH
+// Negative Symbol
+const onNegativePress = (event) => {
+  if (display[0] != "-") {
+    display.shift("-");
+    currentDisplay.innerHTML += `<p>${event.target.value}</p>`
+  }
+}
+
+// TEST - NEED FINISH
+// Dark Mode
+const switchDarkMode = () => {
+  body.classList.toggle("dark-mode");
+  console.log("dark mode");
+}
+
 // Push current display to memory
-// Don't include equals sign
 const currentToMemoryDisplay = () => {
   memoryDisplay.innerHTML = "";
   display.forEach((character) => {
@@ -56,7 +75,7 @@ const currentToMemoryDisplay = () => {
   display = [];
 };
 
-/* --------------------------- // Maths functions --------------------------- */
+/* --------------------------- Maths functions --------------------------- */
 
 // Addition
 const addition = (numberOne, numberTwo) => {
@@ -79,24 +98,26 @@ const division = (numberOne, numberTwo) => {
 };
 
 /* ---------------------------- Overall Maths Function ---------------------------- */
+
 let memory = 0;
 
 const onEqualsPress = () => {
   let temporaryDisplay = display.join("");
-  console.log(display);
-  
+    
   symbols.forEach(symbol => {
     if (display.includes(symbol)) {
       // Split into two parts by operator
       const operands = temporaryDisplay.split(symbol);
       
-      // Check to see if there's memory
+      // Check to see if there's memory and set operandOne
       let  operandOne = []
       if (memory != 0) {
         operandOne = memory;
       } else {
         operandOne = operands[0];
       }
+      console.log(display)
+      console.log(operandOne)
 
       const operandTwo = operands[1];
 
@@ -146,3 +167,7 @@ calculatorButton.forEach((button) =>
 ACButton.addEventListener("click", displayClear);
 
 equalsButton.addEventListener("click", onEqualsPress);
+
+negativeButton.addEventListener("click", onNegativePress);
+
+darkModeButton.addEventListener("click", switchDarkMode);
