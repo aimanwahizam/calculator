@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator Project",
+  "main": "app.js",
+  "scripts": {
+    "testCypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimanwahizam/calculator.git"
+  },
+  "author": "Aiman Wahizam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimanwahizam/calculator/issues"
+  },
+  "homepage": "https://github.com/aimanwahizam/calculator#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}

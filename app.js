@@ -4,6 +4,7 @@
 
 const symbols = ["÷", "x", "-", "+"];
 let display = [];
+let indexOfSymbols = [];
 
 /* -------------------------------------------------------------------------- */
 /*                                HTML Elements                               */
@@ -49,16 +50,16 @@ const displayClear = () => {
 const onNegativePress = (event) => {
   if (display[0] != "-") {
     display.shift("-");
-    currentDisplay.innerHTML += `<p>${event.target.value}</p>`
+    currentDisplay.innerHTML += `<p>${event.target.value}</p>`;
   }
-}
+};
 
 // TEST - NEED FINISH
 // Dark Mode
 const switchDarkMode = () => {
   body.classList.toggle("dark-mode");
   console.log("dark mode");
-}
+};
 
 // Push current display to memory
 const currentToMemoryDisplay = () => {
@@ -74,6 +75,45 @@ const currentToMemoryDisplay = () => {
   currentDisplay.innerHTML = "";
   display = [];
 };
+
+// Store all index of symbols in display
+// const saveIndexOfSymbols = () => {
+//   const displayCopy = [...display];
+//   const symbolsCopy = [...symbols];
+
+//   displayCopy.forEach(character => {
+//     symbolsCopy.forEach(symbol => {
+//       character.includes(symbol) ? indexOfSymbols.push(indexof)
+//     })
+//   })
+// }
+
+/* ----------------------------- Error Handling ----------------------------- */
+
+// const checkMultipleDecimals = () => {
+//   const displayCopy = [...display];
+//   const indexOfSymbolsCopy = [...indexOfSymbols];
+
+//   console.log(displayCopy);
+
+ 
+
+
+  // const operands = displayCopy.split("x");
+  // console.log(operands);
+
+  // operands.forEach((operand) => {
+  //   let counter = 0;
+
+  //   const characters = operand.split("");
+
+  //   characters.forEach((character) => {
+  //     character === "." ? counter++ : null;
+
+  //     counter > 2 ? alert("Error: Too many decimal points") : null;
+  //   });
+  // });
+//};
 
 /* --------------------------- Maths functions --------------------------- */
 
@@ -103,21 +143,19 @@ let memory = 0;
 
 const onEqualsPress = () => {
   let temporaryDisplay = display.join("");
-    
-  symbols.forEach(symbol => {
+
+  symbols.forEach((symbol) => {
     if (display.includes(symbol)) {
       // Split into two parts by operator
       const operands = temporaryDisplay.split(symbol);
-      
+
       // Check to see if there's memory and set operandOne
-      let  operandOne = []
+      let operandOne = [];
       if (memory != 0) {
         operandOne = memory;
       } else {
         operandOne = operands[0];
       }
-      console.log(display)
-      console.log(operandOne)
 
       const operandTwo = operands[1];
 
@@ -140,7 +178,10 @@ const onEqualsPress = () => {
         memory = result;
         display.push(memory);
       } else if (symbol === "-") {
-        const result = subtraction(parseFloat(operandOne), parseFloat(operandTwo));
+        const result = subtraction(
+          parseFloat(operandOne),
+          parseFloat(operandTwo)
+        );
         currentToMemoryDisplay();
         currentDisplay.innerHTML = `<p>${result}</p>`;
         memory = result;
@@ -153,16 +194,17 @@ const onEqualsPress = () => {
         display.push(memory);
       }
     }
-  })
+  });
 };
 
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
 /* -------------------------------------------------------------------------- */
 
-calculatorButton.forEach((button) =>
-  button.addEventListener("click", onClickCalculatorButton)
-);
+calculatorButton.forEach((button) => {
+  button.addEventListener("click", onClickCalculatorButton);
+  button.addEventListener("click", checkMultipleDecimals);
+});
 
 ACButton.addEventListener("click", displayClear);
 
